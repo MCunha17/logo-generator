@@ -1,4 +1,10 @@
-{
+  {
+    "name": "logo-generator",
+    "version": "1.0.0",
+    "description": "Logo Generator Application",
+    "scripts": {
+      "test": "jest"
+  },
   "dependencies": {
     "inquirer": "^8.2.4"
   },
