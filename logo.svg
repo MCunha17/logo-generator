@@ -1,5 +1,6 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 200" width="300" height="200">
-  <text x="10" y="50" fill="white">mc</text>
-  <polygon xmlns="" points="150, 18 244, 182 56, 182" fill="green"/>
-</svg>
+
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      <polygon points="150, 18 244, 182 56, 182" fill="red" />
+      <text x="150" y="150" fill="purple" text-anchor="middle" dominant-baseline="middle" font-size="48">MC</text>
+    </svg>
+  
