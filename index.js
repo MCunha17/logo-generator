@@ -20,3 +20,13 @@ async function promptLogoDetails() {
             message: 'Enter logo shape',
         },
     ]);
+
+    let shapeInstance;
+        switch (shape) {
+            case 'Triangle':
+                shapeInstance = new Triangle();
+            case 'Circle':
+                shapeInstance = new Circle();
+            case 'Square':
+                shapeInstance = new Square();
+        }
