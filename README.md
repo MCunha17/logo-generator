@@ -28,7 +28,7 @@ You can access this application's GitHub repository [here](https://github.com/MC
 * Displays the text within the shape of the logo.
 
 ## Installation
-1. Clone the [Logo Generator repository] (https://github.com/MCunha17/logo-generator).
+1. Clone the [Logo Generator repository](https://github.com/MCunha17/logo-generator).
 2. Navigate to the project directory.
 3. Install the dependencies: 'npm install'.
 
