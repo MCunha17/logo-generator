@@ -1,3 +1,4 @@
+(async () => {
 const inquirer = require('inquirer');
 const {Triangle, Circle, Square} = require('lib/shapes.js');
 
@@ -15,9 +16,15 @@ async function promptLogoDetails() {
             message: 'Enter logo text color',
         },
         {
+            type: 'list',
+            name: 'shape',
+            message: 'Select a logo shape',
+            choices: ['Triangle', 'Circle', 'Square'],
+        },
+        {
             type: 'input',
             name: 'shapeColor',
-            message: 'Enter logo shape',
+            message: 'Enter logo shape color',
         },
     ]);
 
@@ -45,3 +52,4 @@ async function generateLogo() {
 
 // Save the logo as a file
 generateLogo();
+})();
