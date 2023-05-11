@@ -32,10 +32,13 @@ async function promptLogoDetails() {
         switch (shape) {
             case 'Triangle':
                 shapeInstance = new Triangle();
+                break;
             case 'Circle':
                 shapeInstance = new Circle();
+                break;
             case 'Square':
                 shapeInstance = new Square();
+                break;
         }
 
     shapeInstance.setColor(shapeColor);
