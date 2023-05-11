@@ -30,3 +30,9 @@ async function promptLogoDetails() {
             case 'Square':
                 shapeInstance = new Square();
         }
+
+    shapeInstance.setColor(shapeColor);
+    const logoSVG = shapeInstance.render();
+
+    return {text, textColor, logoSVG};
+}
