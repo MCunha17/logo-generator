@@ -8,3 +8,11 @@ describe('Triangle', () => {
     });
 });
 
+describe('Circle', () => {
+    test('returns SVG with circle shape and given color', () => {
+        const shape = new Circle();
+        shape.setColor('red');
+        expect(shape.render()).toEqual('<circle cx="150" cy="100" r="50" fill="red" />');
+    });
+});
+
