@@ -2,28 +2,9 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const {Triangle, Circle, Square} = require('./lib/shapes.js');
 
-function generateSVGFile(answers) {
-  const {text, textColor, shape, shapeColor} = answers;
-
-  // Create shape object
-  const shapeObject = createShapeObject(shape);
-  // Set color of shape
-  shapeObject.setColor(shapeColor);
-
-  const svgContent = `
-    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
-      ${shapeObject.render()}
-      <text x="150" y="150" fill="${textColor}" text-anchor="middle" dominant-baseline="middle" font-size="48">${text}</text>
-    </svg>
-  `;
-
-  // Writes SVG content to file
-  fs.writeFileSync('logo.svg', svgContent);
-}
-
-// Creates new object
+// Function to create shape object
 function createShapeObject(shape) {
-  switch (shape) {
+  switch (shape.toLowerCase()) {
     case 'circle':
       return new Circle();
     case 'triangle':
@@ -35,14 +16,50 @@ function createShapeObject(shape) {
   }
 }
 
-// User prompts
+// Function to get shape dimensions to center text
+function getShapeDimensions(shape) {
+  switch (shape.toLowerCase()) {
+    case 'circle':
+      return {centerX: 150, centerY: 100};
+    case 'triangle':
+      return {centerX: 150, centerY: 127};
+    case 'square':
+      return {centerX: 150, centerY: 100};
+    default:
+      throw new Error('Invalid shape');
+  }
+}
+
+// Function to generate SVG file
+function generateSVGFile(answers) {
+  const { text, textColor, shape, shapeColor } = answers;
+  const shapeObject = createShapeObject(shape);
+  shapeObject.setColor(shapeColor);
+
+  const shapeSVG = shapeObject.render();
+  const shapeDimensions = getShapeDimensions(shape);
+
+  const textX = shapeDimensions.centerX;
+  const textY = shapeDimensions.centerY;
+
+  const svgContent = `
+    <svg xmlns="http://www.w3.org/2000/svg" width="300" height="200">
+      ${shapeSVG}
+      <text x="${textX}" y="${textY}" fill="${textColor}" text-anchor="middle" dominant-baseline="middle" font-size="48">${text}</text>
+    </svg>
+  `;
+
+  // Writing SVG content to a file
+  fs.writeFileSync('logo.svg', svgContent);
+}
+
 const questions = [
   {
     name: 'text',
     type: 'input',
     message: 'Enter the logo text (up to three characters)',
-    // Validates input
     validate: function (value) {
+      // Validating that input is less than or equal to three characters
       return value.length <= 3;
     }
   },
@@ -55,7 +72,7 @@ const questions = [
     name: 'shape',
     type: 'list',
     message: 'Select a logo shape:',
-    choices: ['Circle', 'Triangle', 'Square']
+    choices: ['circle', 'triangle', 'square']
   },
   {
     name: 'shapeColor',
@@ -64,8 +81,8 @@ const questions = [
   }
 ];
 
+// Generating SVG file based on user's answers to prompts
 inquirer.prompt(questions).then(answers => {
-  // Generates SVG files based on prompt inputs
   generateSVGFile(answers);
   console.log('Generated logo.svg');
 });
