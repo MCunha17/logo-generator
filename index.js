@@ -53,6 +53,6 @@ async function generateLogo() {
     console.log('Generate logo.svg')
 }
 
-// Save the logo as a file
-generateLogo();
+    // Save the logo as a file
+    await generateLogo();
 })();
