@@ -13,7 +13,7 @@ async function promptLogoDetails() {
             type: 'input',
             name: 'textColor',
             message: 'Enter logo text color',
-        }
+        },
         {
             type: 'input',
             name: 'shapeColor',
@@ -36,3 +36,12 @@ async function promptLogoDetails() {
 
     return {text, textColor, logoSVG};
 }
+
+// Function to generate logo
+async function generateLogo() {
+    const {text, textColor, logoSVG} = await promptLogoDetails();
+    console.log('Generate logo.svg')
+}
+
+// Save the logo as a file
+generateLogo();
