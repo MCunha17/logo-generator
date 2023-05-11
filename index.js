@@ -1,6 +1,5 @@
-(async () => {
-const inquirer = require('inquirer');
-const {Triangle, Circle, Square} = require('lib/shapes.js');
+const inquirer = require ('inquirer');
+const {Triangle, Circle, Square} = require('./lib/shapes.js');
 
 // Function for user prompt
 async function promptLogoDetails() {
@@ -53,6 +52,5 @@ async function generateLogo() {
     console.log('Generate logo.svg')
 }
 
-    // Save the logo as a file
-    await generateLogo();
-})();
+// Save the logo as a file
+generateLogo();
