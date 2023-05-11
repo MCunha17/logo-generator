@@ -1,6 +1,9 @@
+// Imports Triangle, Circle, and Square classes from lib/shapes.js file
 const {Triangle, Circle, Square} = require('lib/shapes.js');
 
+// Test for Triangle class
 describe('Triangle', () => {
+    // Test case
     test('returns SVG with triangle shape and given color', () => {
         const shape = new Triangle();
         shape.setColor('blue');
@@ -8,7 +11,9 @@ describe('Triangle', () => {
     });
 });
 
+// Test for Circle class
 describe('Circle', () => {
+    // Test case
     test('returns SVG with circle shape and given color', () => {
         const shape = new Circle();
         shape.setColor('red');
@@ -16,7 +21,9 @@ describe('Circle', () => {
     });
 });
 
+// Test for Square class
 describe('Square', () => {
+    // Test case
     test ('returns SVG with square shape and given color', () => {
         const shape = new Square();
         shape.setColor('green');
