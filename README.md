@@ -7,7 +7,7 @@ The displayed license badge is sourced from <a href="https://shields.io/category
 ## Description
 This Logo Generator is a command-line application that allows users to create custom logos in SVG format. The application prompts the user to enter the text and text color to be displayed within the logo, along with the logo's shape and shape color. By leveraging this Logo Generator, users will able to create their own SVG-formatted logos and will not have to pay for a Graphic Designer.
 
-You can access this application's GitHub repository [here](https://github.com/MCunha17/logo-generator) and a demo video of its functionality [here](https://drive.google.com/file/d/1WriPqFjJVi5YCYpopsvFI9dYqM4d-t3D/view?usp=share_link).
+You can access this application's GitHub repository [here](https://github.com/MCunha17/logo-generator) and a demo video of its functionality [here](https://drive.google.com/file/d/1na0_E13N9XFGvsJWEmZcN4__VQPrVyEH/view?usp=sharing).
 
 ![Terminal screenshot of application](/images/logo-generator-screenshot.png)
 
